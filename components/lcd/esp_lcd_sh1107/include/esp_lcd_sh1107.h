@@ -1,0 +1,94 @@
+/*
+ * SPDX-FileCopyrightText: 2022-2026 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/**
+ * @file
+ * @brief ESP LCD: SH1107
+ */
+
+#pragma once
+
+#include "esp_lcd_panel_vendor.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/**
+ * @brief SH1107 configuration structure
+ *
+ * To be used as esp_lcd_panel_dev_config_t.vendor_config.
+ * See esp_lcd_new_panel_sh1107().
+ */
+typedef struct {
+    /**
+     * @brief Display's contrast (128(default) or 1~255)
+     */
+    uint8_t contrast;
+    /**
+     * @brief Display's offset (0x60(default) or 0~127)
+     */
+    uint8_t offset;
+} esp_lcd_panel_sh1107_config_t;
+
+/**
+ * @brief Create LCD panel for model SH1107
+ *
+ * @param[in] io LCD panel IO handle
+ * @param[in] panel_dev_config general panel device configuration
+ * @param[out] ret_panel Returned LCD panel handle
+ * @return
+ *          - ESP_ERR_INVALID_ARG   if parameter is invalid
+ *          - ESP_ERR_NO_MEM        if out of memory
+ *          - ESP_OK                on success
+ *
+ * @note The default panel size is 128x64.
+ * @note Use esp_lcd_panel_sh1107_config_t to set the correct size.
+ * Example usage:
+ * @code {c}
+ *
+ * esp_lcd_panel_sh1107_config_t sh1107_config = {
+ *     .height = 32
+ * };
+ * esp_lcd_panel_dev_config_t panel_config = {
+ *     <...>
+ *     .vendor_config = &sh1107_config
+ * };
+ *
+ * esp_lcd_panel_handle_t panel_handle = NULL;
+ * esp_lcd_new_panel_sh1107(io_handle, &panel_config, &panel_handle);
+ * @endcode
+ */
+esp_err_t esp_lcd_new_panel_sh1107(const esp_lcd_panel_io_handle_t io,
+                                   const esp_lcd_panel_dev_config_t *panel_dev_config, esp_lcd_panel_handle_t *ret_panel);
+
+/**
+ * @brief I2C address of the SH1107 controller
+ *
+ */
+#define ESP_LCD_IO_I2C_SH1107_ADDRESS  (0x3C)
+#define ESP_LCD_IO_I2C_SH1107_ADDRESS1 (0x3D)
+
+/**
+ * @brief Touch IO configuration structure
+ *
+ */
+#define ESP_LCD_IO_I2C_SH1107_CONFIG()              \
+    {                                               \
+        .scl_speed_hz = 100000,                     \
+        .dev_addr = ESP_LCD_IO_I2C_SH1107_ADDRESS,  \
+        .control_phase_bytes = 1,                   \
+        .dc_bit_offset = 0,                         \
+        .lcd_cmd_bits = 8,                          \
+        .lcd_param_bits = 8,                        \
+        .flags =                                    \
+        {                                           \
+            .disable_control_phase = 1,             \
+        }                                           \
+    }
+
+#ifdef __cplusplus
+}
+#endif

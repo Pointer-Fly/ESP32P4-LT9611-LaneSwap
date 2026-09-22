@@ -1,0 +1,5 @@
+# Noglib test_app: Build only in CI, where ENV_BUILD_NOGLIB is set
+test_apps/noglib:
+  disable:
+    # TODO: Remove this after adding proper noglib tests
+    - if: ENV_BUILD_NOGLIB == 0

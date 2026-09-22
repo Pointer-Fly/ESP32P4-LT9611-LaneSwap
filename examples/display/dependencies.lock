@@ -1,0 +1,525 @@
+dependencies:
+  bsp_selector:
+    dependencies:
+    - name: idf
+      version: '>=5.3'
+    - matches:
+      - if: $CONFIG{ESP_BSP_DEVKIT} == 1
+      name: esp_bsp_devkit
+      override_path: ../../bsp/esp_bsp_devkit
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP_BSP_GENERIC} == 1
+      name: esp_bsp_generic
+      override_path: ../../bsp/esp_bsp_generic
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP_WROVER_KIT} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} == 1
+      name: esp_wrover_kit
+      override_path: ../../bsp/esp_wrover_kit
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP_WROVER_KIT} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} != 1
+      name: espressif/esp_wrover_kit_noglib
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP32_C3_LCDKIT} == 1
+      name: esp32_c3_lcdkit
+      override_path: ../../bsp/esp32_c3_lcdkit
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP32_LYRAT} == 1
+      name: esp32_lyrat
+      override_path: ../../bsp/esp32_lyrat
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP32_P4_EYE} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} == 1
+      name: esp32_p4_eye
+      override_path: ../../bsp/esp32_p4_eye
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP32_P4_EYE} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} != 1
+      name: espressif/esp32_p4_eye_noglib
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP32_P4_FUNCTION_EV_BOARD} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} == 1
+      name: esp32_p4_function_ev_board
+      override_path: ../../bsp/esp32_p4_function_ev_board
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP32_P4_FUNCTION_EV_BOARD} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} != 1
+      name: espressif/esp32_p4_function_ev_board_noglib
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP32_S3_EYE} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} == 1
+      name: esp32_s3_eye
+      override_path: ../../bsp/esp32_s3_eye
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP32_S3_EYE} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} != 1
+      name: espressif/esp32_s3_eye_noglib
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP32_S3_KORVO_1} == 1
+      name: esp32_s3_korvo_1
+      override_path: ../../bsp/esp32_s3_korvo_1
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP32_S3_KORVO_2} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} == 1
+      name: esp32_s3_korvo_2
+      override_path: ../../bsp/esp32_s3_korvo_2
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP32_S3_KORVO_2} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} != 1
+      name: espressif/esp32_s3_korvo_2_noglib
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP32_S3_LCD_EV_BOARD} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} == 1
+      name: esp32_s3_lcd_ev_board
+      override_path: ../../bsp/esp32_s3_lcd_ev_board
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP32_S3_LCD_EV_BOARD} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} != 1
+      name: espressif/esp32_s3_lcd_ev_board_noglib
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP32_S3_USB_OTG} == 1
+      name: esp32_s3_usb_otg
+      override_path: ../../bsp/esp32_s3_usb_otg
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP_BOX_3} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} == 1
+      name: esp-box-3
+      override_path: ../../bsp/esp-box-3
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP32_S31_KORVO_1} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} == 1
+      name: esp32_s31_korvo_1
+      override_path: ../../bsp/esp32_s31_korvo_1
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP_BOX_3} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} != 1
+      name: espressif/esp-box-3_noglib
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{M5_ATOM_S3} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} == 1
+      name: m5_atom_s3
+      override_path: ../../bsp/m5_atom_s3
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{M5_ATOM_S3} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} != 1
+      name: espressif/m5_atom_s3_noglib
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{M5DIAL} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} == 1
+      name: m5dial
+      override_path: ../../bsp/m5dial
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{M5DIAL} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} != 1
+      name: espressif/m5dial_noglib
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{M5STACK_CORE} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} == 1
+      name: m5stack_core
+      override_path: ../../bsp/m5stack_core
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{M5STACK_CORE} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} != 1
+      name: espressif/m5stack_core_noglib
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{M5STACK_CORE_2} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} == 1
+      name: m5stack_core_2
+      override_path: ../../bsp/m5stack_core_2
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{M5STACK_CORE_2} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} != 1
+      name: espressif/m5stack_core_2_noglib
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{M5STACK_CORE_S3} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} == 1
+      name: m5stack_core_s3
+      override_path: ../../bsp/m5stack_core_s3
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{M5STACK_CORE_S3} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} != 1
+      name: espressif/m5stack_core_s3_noglib
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{M5STACK_TAB5} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} == 1
+      name: m5stack_tab5
+      override_path: ../../bsp/m5stack_tab5
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{M5STACK_TAB5} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} != 1
+      name: espressif/m5stack_tab5_noglib
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP_VOCAT} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} == 1
+      name: esp_vocat
+      override_path: ../../bsp/esp_vocat
+      public: true
+      version: '*'
+    - matches:
+      - if: $CONFIG{ESP_VOCAT} == 1 && $CONFIG{BSP_SELECT_GLIB_SEL} != 1
+      name: espressif/esp_vocat_noglib
+      public: true
+      version: '*'
+    source:
+      path: ../../components/bsp_selector
+      type: local
+    version: 1.0.1
+  esp32_p4_function_ev_board:
+    dependencies:
+    - name: idf
+      version: '>=5.4'
+    - name: lvgl/lvgl
+      version: '>=8,<10'
+    - name: espressif/esp_lcd_ek79007
+      version: '>=2.0.1,<3.0.0'
+    - name: esp_lcd_ili9881c
+      override_path: ../../components/lcd/esp_lcd_ili9881c
+      version: '>=1.0.3,<2.0.0'
+    - name: esp_lcd_touch_gt911
+      override_path: ../../components/lcd_touch/esp_lcd_touch_gt911
+      version: ^1
+    - name: espressif/esp_lvgl_port
+      override_path: ../../components/esp_lvgl_port
+      public: true
+      version: ^2
+    - name: espressif/esp_lcd_lt8912b
+      override_path: ../../components/lcd/esp_lcd_lt8912b
+      version: '>=0.1.3,<1.0.0'
+    - name: espressif/esp_lcd_lt9611
+      override_path: ../../components/lcd/esp_lcd_lt9611
+      rules:
+      - if: idf_version >=6.0
+      version: 0.1.0
+    - name: espressif/esp_codec_dev
+      public: true
+      version: ~1.5
+    - name: espressif/esp_video
+      public: true
+      version: ~2.0
+    - name: espressif/usb
+      public: true
+      rules:
+      - if: idf_version >=6.0
+      version: ^1.0.0
+    source:
+      path: ../../bsp/esp32_p4_function_ev_board
+      type: local
+    targets:
+    - esp32p4
+    version: 5.2.3
+  esp_lcd_ili9881c:
+    dependencies:
+    - name: idf
+      version: '>=5.3'
+    source:
+      path: ../../components/lcd/esp_lcd_ili9881c
+      type: local
+    targets:
+    - esp32p4
+    version: 1.1.0
+  esp_lcd_touch:
+    dependencies:
+    - name: idf
+      version: '>=5.2'
+    source:
+      path: ../../components/lcd_touch/esp_lcd_touch
+      type: local
+    version: 1.2.1
+  esp_lcd_touch_gt911:
+    dependencies:
+    - name: idf
+      version: '>=5.2'
+    - name: esp_lcd_touch
+      override_path: ../esp_lcd_touch
+      public: true
+      version: ^1.2.0
+    source:
+      path: ../../components/lcd_touch/esp_lcd_touch_gt911
+      type: local
+    version: 1.2.0~2
+  espressif/cmake_utilities:
+    component_hash: 351350613ceafba240b761b4ea991e0f231ac7a9f59a9ee901f751bddc0bb18f
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.1'
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    version: 0.5.3
+  espressif/esp_cam_sensor:
+    component_hash: 902c305b77f7c42b60fff5a084e397694f8a3fd6e6b72299996a7c856666e983
+    dependencies:
+    - name: espressif/cmake_utilities
+      registry_url: https://components.espressif.com
+      require: private
+      version: 0.*
+    - name: espressif/esp_sccb_intf
+      registry_url: https://components.espressif.com
+      require: private
+      version: '>=0.0.5'
+    - name: idf
+      require: private
+      version: '>=5.3'
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    targets:
+    - esp32p4
+    - esp32s3
+    - esp32c3
+    - esp32c5
+    - esp32c6
+    - esp32c61
+    version: 2.0.1
+  espressif/esp_codec_dev:
+    component_hash: df70f10af8d7b922add7b9d07372c9c97ab356e58d72b7a892050227c2d44348
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.0'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.5.11
+  espressif/esp_h264:
+    component_hash: fa5daaebc8a304f0b79bc57e51aab43e0a03eabc2ba3865bff4063c56b5d4564
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.4'
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    version: 1.0.4
+  espressif/esp_ipa:
+    component_hash: 31003e536f0d26158e10d7fcf2448b6377ce1148518287d0f34ed3b6c942c6d8
+    dependencies:
+    - name: espressif/cmake_utilities
+      registry_url: https://components.espressif.com
+      require: private
+      version: 0.*
+    - name: idf
+      require: private
+      version: '>=5.4'
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    targets:
+    - esp32p4
+    version: 1.3.1
+  espressif/esp_lcd_ek79007:
+    component_hash: c5a0501fbab972031026aa6144354b31ed6db899cf2ee5a22ca4ebaf3fea1657
+    dependencies:
+    - name: espressif/cmake_utilities
+      registry_url: https://components.espressif.com
+      require: private
+      version: 0.*
+    - name: idf
+      require: private
+      version: '>=5.3'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    targets:
+    - esp32p4
+    version: 2.0.2~1
+  espressif/esp_lcd_lt8912b:
+    dependencies:
+    - name: idf
+      version: '>=5.3'
+    source:
+      path: ../../components/lcd/esp_lcd_lt8912b
+      type: local
+    version: 0.2.0
+  espressif/esp_lcd_lt9611:
+    dependencies:
+    - name: idf
+      version: '>=6.0.0'
+    source:
+      path: ../../components/lcd/esp_lcd_lt9611
+      type: local
+    version: 0.1.0
+  espressif/esp_lvgl_port:
+    dependencies:
+    - name: idf
+      version: '>=5.2'
+    - name: lvgl/lvgl
+      public: true
+      version: '>=8,<10'
+    source:
+      path: ../../components/esp_lvgl_port
+      type: local
+    version: 2.8.0~1
+  espressif/esp_sccb_intf:
+    component_hash: eb6a7d5c992f09583c163b2e3f5e95a0fdc87a2d9f8e026f3e59153935553889
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.3'
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    version: 0.0.9
+  espressif/esp_video:
+    component_hash: ba8f4aa63ad9bda3cc18a3afe1b9ba5b39c7359a6ad79392a94e42ba8cf9e5f8
+    dependencies:
+    - name: espressif/cmake_utilities
+      registry_url: https://components.espressif.com
+      require: private
+      version: 0.*
+    - name: espressif/esp_cam_sensor
+      registry_url: https://components.espressif.com
+      require: private
+      version: 2.0.*
+    - name: espressif/esp_h264
+      registry_url: https://components.espressif.com
+      require: private
+      rules:
+      - if: target in [esp32p4]
+      version: 1.0.4
+    - name: espressif/esp_ipa
+      registry_url: https://components.espressif.com
+      require: private
+      rules:
+      - if: target in [esp32p4]
+      version: 1.3.*
+    - name: idf
+      require: private
+      version: '>=5.4'
+    - name: espressif/usb_host_uvc
+      registry_url: https://components.espressif.com
+      require: private
+      rules:
+      - if: target in [esp32p4, esp32s3]
+      version: 2.4.*
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    targets:
+    - esp32p4
+    - esp32s3
+    - esp32c3
+    - esp32c5
+    - esp32c6
+    - esp32c61
+    version: 2.0.1
+  espressif/usb:
+    component_hash: 6c2cff118141dbbca181d0d27d71801fdddfc78f7ac03ae43f6e5a8cbd89cb99
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.5.3'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    targets:
+    - esp32s2
+    - esp32s3
+    - esp32s31
+    - esp32p4
+    - esp32h4
+    - linux
+    version: 1.5.0
+  espressif/usb_host_uvc:
+    component_hash: f20c4e4dea50536e2e29daaf589b5f5984402284c155867daef27d6b64869f78
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.0'
+    - name: espressif/usb
+      registry_url: https://components.espressif.com
+      require: public
+      rules:
+      - if: idf_version >=6.0
+      - if: target not in ["linux"]
+      version: ^1.0.0
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    targets:
+    - esp32s2
+    - esp32s3
+    - esp32p4
+    - esp32h4
+    - linux
+    version: 2.4.2
+  idf:
+    source:
+      type: idf
+    version: 6.0.2
+  lvgl/lvgl:
+    component_hash: d5e723db3a3feca71e34e333a6598b7624e3822577d374e1d44f0e18374952e1
+    dependencies:
+    - name: espressif/freetype
+      registry_url: https://components.espressif.com
+      require: private
+      rules:
+      - if: idf_version >=5.5 && $CONFIG{LV_USE_FREETYPE} == True
+      version: ^2.14.3
+    - name: espressif/libjpeg-turbo
+      registry_url: https://components.espressif.com
+      require: private
+      rules:
+      - if: idf_version >=5.5 && $CONFIG{LV_USE_LIBJPEG_TURBO} == True
+      version: ^3.1.1
+    - name: espressif/libpng
+      registry_url: https://components.espressif.com
+      require: private
+      rules:
+      - if: idf_version >=5.5 && $CONFIG{LV_USE_LIBPNG} == True
+      version: ^1.6.58
+    - name: espressif/lz4
+      registry_url: https://components.espressif.com
+      require: private
+      rules:
+      - if: idf_version >=5.5 && $CONFIG{LV_USE_LZ4} == True && $CONFIG{LV_USE_LZ4_INTERNAL} == False
+      version: ^1.10.0
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 9.6.0
+direct_dependencies:
+- bsp_selector
+manifest_hash: d7675c655a8643871a87457c361bd73528bee84b56ef735b36c7161f006f64f2
+target: esp32p4
+version: 3.0.0

@@ -1,0 +1,24 @@
+components/io_expander/esp_io_expander_aw9523:
+  depends_filepatterns:
+    - "components/io_expander/esp_io_expander/**"
+    - "components/io_expander/esp_io_expander_aw9523/**"
+
+components/io_expander/esp_io_expander_ht8574:
+  depends_filepatterns:
+    - "components/io_expander/esp_io_expander/**"
+    - "components/io_expander/esp_io_expander_ht8574/**"
+
+components/io_expander/esp_io_expander_pi4ioe5v6408:
+  depends_filepatterns:
+    - "components/io_expander/esp_io_expander/**"
+    - "components/io_expander/esp_io_expander_pi4ioe5v6408/**"
+
+components/io_expander/esp_io_expander_tca95xx_16bit:
+  depends_filepatterns:
+    - "components/io_expander/esp_io_expander/**"
+    - "components/io_expander/esp_io_expander_tca95xx_16bit/**"
+
+components/io_expander/esp_io_expander_tca9554:
+  depends_filepatterns:
+    - "components/io_expander/esp_io_expander/**"
+    - "components/io_expander/esp_io_expander_tca9554/**"
