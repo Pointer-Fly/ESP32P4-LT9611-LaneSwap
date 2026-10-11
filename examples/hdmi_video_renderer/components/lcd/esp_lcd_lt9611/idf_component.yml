@@ -1,0 +1,10 @@
+dependencies:
+  idf: '>=6.0.0'
+description: ESP LCD LT9611 (MIPI DSI to HDMI Bridge)
+issues: https://github.com/espressif/esp-bsp/issues
+repository: git://github.com/espressif/esp-bsp.git
+repository_info:
+  commit_sha: b1bc71e7980663110055fbeba7eab59d5e689c2b
+  path: components/lcd/esp_lcd_lt9611
+url: https://github.com/espressif/esp-bsp/tree/master/components/lcd/esp_lcd_lt9611
+version: 0.1.0
